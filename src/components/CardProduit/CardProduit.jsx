@@ -5,12 +5,46 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import './CardProduit.css';
 import ContextBoutique from '../../context/ContextBoutique.jsx';
+import './CardProduit.css';
+
+// CONTENU CARD
 
 const style = {
-  styleCard: { maxWidth: "100%", marginTop: ".5rem", minHeight: 740 },
-  styleCardMedia: { height: 320 }
+  styleCard: {
+    maxWidth: "100%",
+    minHeight: 740,
+    textAlign: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0)',
+    '&:hover': {
+      cursor: 'pointer',
+      transform: 'scale(1.10)',
+      transition: 'transform 0.3s ease',
+      backgroundColor: 'white',
+      // color:'black' Comment changer la couleur ?
+    }
+
+  },
+  styleCardMedia: { height: 470 },
+  styleCardActionsButton: {
+    backgroundColor: 'white',
+    color: 'black',
+    padding: '0.5rem',
+    margin: 'auto',
+    '&:hover': {
+      backgroundColor: 'black',
+      color: 'white',
+      cursor: 'pointer',
+      fontWeight: 'bold'
+    }
+  },
+  styleCardHover:{
+    '&:hover': {
+     color: 'black'
+    }
+
+  }
+
 }
 
 export default function MediaCard(props) {
@@ -19,49 +53,47 @@ export default function MediaCard(props) {
 
   return (
     <div className='MaCard'>
-      <Card className="MaCardCard" sx=
+      <Card sx=
         {style.styleCard}
       >
-        <CardMedia
+        <CardMedia style={style.styleCardMedia}
           sx={{
             height: "20rem",
-            backgroundSize: 'contain'
+            backgroundSize: '80%'
           }}
           image={props.costume.url}
-
-          title="green iguana"
+          title="costume"
         />
 
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" sx={{ color: 'darkgrey'}} >
             {
               props.costume.name
             }
           </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          <Typography variant="body2" sx={{ color: 'darkgrey' }}>
             {
               props.costume.description
             }
           </Typography>
-          <Typography variant="body1" sx={{ color: 'text.primary' }}>
+          <Typography variant="body1" sx={{ color: 'darkgrey' }}>
             {
               props.costume.price + " €"
             }
           </Typography>
-          <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+          <Typography variant="body1" sx={{ color: 'darkgrey' }}>
             {
-              props.costume.quantity 
-              
+              props.costume.quantity
+
             } in stock
-             
+
           </Typography>
         </CardContent>
         <CardActions>
-          <Button   disabled={props.costume.quantity === 0 ? true : false} size="small" onClick={() => {
+          <Button sx={style.styleCardActionsButton} disabled={props.costume.quantity === 0 ? true : false} size="small" onClick={() => {
             contextBoutique.addCard(props.costume.id);
-            // console.log(contextBoutique)
-            }}
-            >Ajouter au panier</Button>
+          }}
+          >Ajouter au panier</Button>
         </CardActions>
       </Card>
     </div>

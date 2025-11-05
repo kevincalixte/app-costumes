@@ -12,6 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AcUnitIcon from '@mui/icons-material/AcUnit';
+
+// NAVBAR 
+
 const pages = ["Accueil", "Panier"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -38,18 +41,17 @@ function MenuBoutique() {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "red",
+        backgroundColor: "black",
         borderRadius: '2rem',
-        position: "fixed",
         display: "flex",
         padding: "0.2rem",
-        marginTop: "1rem",      
-       
+        width: '90%',
+        margin: '1.5rem auto 0 auto'
       }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AcUnitIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <AcUnitIcon sx={{ display: { xs: "none", md: "flex" }, mr: 2 }} />
           <Typography
             variant="h6"
             noWrap
@@ -68,7 +70,7 @@ function MenuBoutique() {
             COSTUMES.fr
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -97,7 +99,9 @@ function MenuBoutique() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                  <Typography sx={{
+                    textAlign: "center"
+                  }}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -119,7 +123,6 @@ function MenuBoutique() {
               textDecoration: "none",
             }}
           >
-            {/* COSTUMES.fr */}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -131,8 +134,11 @@ function MenuBoutique() {
                 {page}
               </Button>
             ))}
+
+            {/* MENU PROFIL A DROITE */}
+
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -162,7 +168,7 @@ function MenuBoutique() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>

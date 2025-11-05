@@ -1,26 +1,35 @@
 import React, { useContext } from 'react'
 import ContextBoutique from '../../context/ContextBoutique';
 import CartArticle from '../CartArticle/CartArticle';
-import './Cart.css';
 
-const style = {
-  styleCard: {backgroundColor: "green"},
-//   styleCardMedia: { height: 320 }
+const styles = {
+    styleCart: {
+        width: '90%',
+        margin: '2rem auto',
+        backgroundColor: 'white',
+    },
+    styleCartEmpty:{
+        textAlign: 'center',
+        marginTop: '2rem',
+        width: '50vw',
+        margin: '2rem auto',
+        color: 'darkgrey'
+    }
 }
 const Cart = () => {
     const contextBoutique = useContext(ContextBoutique);
     if (contextBoutique.cart.length) {
         return (
-            <div className='cartAdd' style={style.styleCard}>
+            <div style={styles.styleCart}>
                 {
-                    contextBoutique.cart.map((value, index) => <CartArticle key={index} id={value} />)
+                    contextBoutique.cart.map((value, index) => <CartArticle key={index} id={value} item={value} />)
                 }
             </div>
         )
     } else {
         return (
-            <div className='cartEmpty'>
-                Aucun article dans votre Panier.
+            <div style={styles.styleCartEmpty}>
+               Panier vide
             </div>
         )
     }

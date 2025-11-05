@@ -1,15 +1,26 @@
-import * as React from 'react';
-// import catalogue from "../../assets/js/lib/catalogue.service.js";
+import { PaddingRounded } from '@mui/icons-material';
 import CardProduit from '../CardProduit/CardProduit.jsx';
-import './CardContainer.css';
-import CartArticle from '../CartArticle/CartArticle.jsx';
+import { backdropClasses } from '@mui/material';
 
-export default function SimpleContainer(props) {
+// CONTAINER DES CARDS
 
-  // console.log(props)
+const styles={
+  styleContainer:{
+    display:'flex',
+    flexWrap:'wrap',
+    justifyContent:'space-between',
+    padding: '5rem',
+    backgroundColor: 'black',
+    width: '90%',
+    margin: '0 auto',
+    borderRadius: '2rem'
+  }
+}
+export default function CardContainer(props) {
+
   return (
 
-    <div className='MonContainer'>
+    <div style={styles.styleContainer}>
     {
       props.catalogue.map((value, index) =>
         <CardProduit
