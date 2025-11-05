@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AcUnitIcon from '@mui/icons-material/AcUnit';
+import CheckroomIcon from '@mui/icons-material/Checkroom';
 
 // NAVBAR 
 
@@ -51,7 +51,7 @@ function MenuBoutique() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AcUnitIcon sx={{ display: { xs: "none", md: "flex" }, mr: 2 }} />
+          <CheckroomIcon sx={{ display: { xs: "none", md: "flex" }, mr: 2 }} />
           <Typography
             variant="h6"
             noWrap
@@ -106,7 +106,7 @@ function MenuBoutique() {
               ))}
             </Menu>
           </Box>
-          <AcUnitIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <CheckroomIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap

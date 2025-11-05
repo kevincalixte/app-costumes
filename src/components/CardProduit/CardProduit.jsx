@@ -16,6 +16,9 @@ const style = {
     minHeight: 740,
     textAlign: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0)',
+    borderRadius: '10rem',
+    backgroundColor: 'white',
+    margin: '0 2rem 2rem 0',
     '&:hover': {
       cursor: 'pointer',
       transform: 'scale(1.10)',
@@ -25,7 +28,13 @@ const style = {
     }
 
   },
-  styleCardMedia: { height: 470 },
+  // POUR GERER LE BACKROUND IMAGE
+  styleCardMedia: {
+    height: 470,
+    backgroundSize: 'contain',
+    borderRadius: '50rem'
+
+  },
   styleCardActionsButton: {
     backgroundColor: 'white',
     color: 'black',
@@ -38,9 +47,9 @@ const style = {
       fontWeight: 'bold'
     }
   },
-  styleCardHover:{
+  styleCardHover: {
     '&:hover': {
-     color: 'black'
+      color: 'black'
     }
 
   }
@@ -55,28 +64,29 @@ export default function MediaCard(props) {
     <div className='MaCard'>
       <Card sx=
         {style.styleCard}
+        style={{}}
+
       >
         <CardMedia style={style.styleCardMedia}
           sx={{
             height: "20rem",
-            backgroundSize: '80%'
           }}
           image={props.costume.url}
           title="costume"
         />
 
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{ color: 'darkgrey'}} >
+          <Typography style={{color: 'black'}} gutterBottom variant="h5" component="div" sx={{ color: 'darkgrey' }} >
             {
               props.costume.name
             }
           </Typography>
-          <Typography variant="body2" sx={{ color: 'darkgrey' }}>
+          <Typography style={{color: 'black'}} variant="body2" sx={{ color: 'darkgrey' }}>
             {
               props.costume.description
             }
           </Typography>
-          <Typography variant="body1" sx={{ color: 'darkgrey' }}>
+          <Typography style={{color: 'red', fontSize: '1.8rem'}}variant="body1" sx={{ color: 'darkgrey' }}>
             {
               props.costume.price + " €"
             }
