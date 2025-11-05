@@ -1,0 +1,25 @@
+.MaCard {
+    width: 100%;
+    text-align: center;
+}
+
+.MaCard button {
+    background-color: red;
+    color: white;
+    padding: .5rem;
+    margin: 0 auto;
+}
+
+.MaCard button:hover {
+    background-color: black;
+    color: red;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+@media screen and (min-width: 576px) {
+    .MaCard {
+        width: 33%;
+    }
+}
+
