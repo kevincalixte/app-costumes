@@ -10,7 +10,6 @@ const styles = {
     },
     styleCartEmpty:{
         textAlign: 'center',
-        marginTop: '2rem',
         width: '50vw',
         margin: '2rem auto',
         color: 'darkgrey'
@@ -22,7 +21,7 @@ const Cart = () => {
         return (
             <div style={styles.styleCart}>
                 {
-                    contextBoutique.cart.map((value, index) => <CartArticle key={index} id={value} item={value} />)
+                    contextBoutique.cart.map((value, index) => <CartArticle key={index} item={value} />)
                 }
             </div>
         )

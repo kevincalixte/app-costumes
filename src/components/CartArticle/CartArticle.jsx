@@ -2,13 +2,13 @@ import React, { useContext } from 'react'
 import ContextBoutique from '../../context/ContextBoutique'
 
 const styles = {
-  articles: { 
-    margin: '1.5rem auto', 
-    padding: '1.5rem', 
-    display: 'flex', 
-    justifyContent: 'space-between', 
-    alignItems: 'center', 
-    width: '90vw', 
+  articles: {
+    margin: '1.5rem auto',
+    padding: '1.5rem',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '90vw',
     borderRadius: '1rem',
     backgroundColor: 'white',
     border: '1px solid transparent',
@@ -25,11 +25,12 @@ function CartArticle(props) {
       <div>{values.name}</div>
       <div>{values.price}</div>
       <div style={{ display: 'flex', justifyContent: 'space-between', width: 100 }}>
-        <div>-</div>
+      <button onClick={() => contextBoutique.removeAll(props.item.id)}>Remove all</button>
+        <div onClick={() => contextBoutique.removeCard(props.item.id)}>-</div>
         <div>{props.item.quantity}</div>
-        <div onClick={() => contextBoutique.addCart(props.item.id)}>+</div>
+        <div onClick={() => contextBoutique.addCard(props.item.id)}>+</div>
       </div>
-      <div>Total : {"??"}</div>
+      <div>Total : {"?"}</div>
     </div>
   )
 }

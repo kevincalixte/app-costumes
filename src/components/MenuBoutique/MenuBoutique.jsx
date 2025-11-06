@@ -133,8 +133,9 @@ function MenuBoutique() {
               >
                 {page}
               </Button>
-            ))}
 
+            ))}
+            
             {/* MENU PROFIL A DROITE */}
 
           </Box>
